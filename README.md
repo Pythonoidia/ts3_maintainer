@@ -10,6 +10,8 @@ Normally we want to separate data storage layer and ts3 api service. So for prod
 docker-compose up
 ```
 #TODO: add credentials information
+
+
 This should start the services needed, excluding ts3_query_http_api and databases. We assume that these parts shall be kept externally. 
 
 
