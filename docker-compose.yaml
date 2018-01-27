@@ -1,0 +1,29 @@
+version: "2"
+
+services:
+  ts3:
+    build:
+        context: ts3/
+    ports:
+        - "9987/udp"
+        - "10011"
+        - "30033"
+
+  ts3-api:
+    build: 
+      context: ts3_query_http_api/
+    links:
+        - ts3:ts3
+
+  haproxy:
+    image: 'dockercloud/haproxy'
+    links:
+     - ts3-api
+    ports:
+     - "9652:80"
+     - "1936:1936"
+    environment:
+      STATS_AUTH: "change:me"
+
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
