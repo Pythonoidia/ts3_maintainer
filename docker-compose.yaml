@@ -3,7 +3,7 @@ version: "2"
 services:
   ts3:
     build:
-        context: ts3/
+        context: ts3_query_server_test/
     ports:
         - "9987/udp"
         - "10011"
