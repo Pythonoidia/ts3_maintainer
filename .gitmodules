@@ -1,6 +1,6 @@
 [submodule "ts3_query_http_api"]
 	path = ts3_query_http_api
-	url = https://github.com/Pythonoidia/ts3_query_http_api
+	url = ../ts3_query_http_api
 [submodule "ts3_query_server_test"]
 	path = ts3_query_server_test
-	url = https://github.com/Pythonoidia/ts3_query_server_test
+	url = ../ts3_query_server_test
