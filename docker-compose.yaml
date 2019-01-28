@@ -16,14 +16,17 @@ services:
         - ts3:ts3
 
   haproxy:
-    image: 'dockercloud/haproxy'
+    image: 'eeacms/haproxy'
     links:
      - ts3-api
     ports:
-     - "9652:80"
+     - "9652:5000"
      - "1936:1936"
     environment:
       STATS_AUTH: "change:me"
+      BACKENDS: "ts3-api"
+      DNS_ENABLED: "true"
+      LOG_LEVEL: "info"
 
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
